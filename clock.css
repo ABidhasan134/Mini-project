@@ -1,0 +1,95 @@
+*
+{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /*to worke the align-itme properly we must have to ste the  height*/
+
+
+}
+.contener
+{
+    position: relative;
+}
+.clock
+{
+   height: 300px;
+   width: 300px;
+   background-color: rgb(22, 23, 22);
+   color: white;
+   border-radius: 50%;
+   border: 2px solid  rgb(6, 147, 100);
+   box-shadow:  -3px -3px 25px 10px rgba(28, 29, 28,0.2);
+   display: flex;
+   /* this flex box for before and after property 
+   verticaly(align) and horizontaly (justify) */
+   justify-content: center;
+   align-items: center;
+}
+.clock::before
+{
+    content:''; /* before content have to be free from all */
+    position: absolute;/*  */
+    height: 10px;
+    width: 10px;
+    background:rgb(6, 147, 100);
+    border-radius: 50%;
+    z-index: 2;
+}
+.clock span
+{
+    position: absolute;
+    /*transform: rotate(calc(30deg * var(--i)));
+    we are using tramsform property to rotate and set globel porperty.
+    This global property created in html and also numbering 
+    like style="--i: 1" */
+    transform: rotate(calc(30deg * var(--i)));
+    inset: 12px;
+    text-align: center;
+    font-size: 1.3rem;
+    
+    
+
+
+}
+.clock span b
+{
+    transform: rotate(calc(-30deg * var(--i)));
+    display: inline-block;
+    text-shadow: inset -3px 3px rgba(rgb(13, 13, 13), rgb(24, 24, 24), rgb(7, 7, 7), 0.5);
+    box-shadow: 1px -1px 2px ;
+    border-radius: 20%;
+
+}
+.hand
+{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+.hand i
+{
+    position: absolute;
+    /* position should be absolut here
+    this class is inside the clock  */
+    background: var(--clr);
+    /* here we are use one creat variable for all individul color */
+    height: var(--h);
+    width: 7px;
+    border-radius: 20%;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    
+
+}
+/* https://www.youtube.com/watch?v=4ul3q-cEhvU&t=706s&ab_channel=CodeTraversal */
+/*New clock-2
+https://www.youtube.com/watch?v=weZFfrjF-k4&ab_channel=
+OnlineTutorials*/
