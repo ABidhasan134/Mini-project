@@ -10,11 +10,41 @@ Array.from(Hinput).forEach((input) => {
   });
 });
 
-var react=document.querySelector(".love");
+var react=document.querySelector("#Love1");
+var LoveNum=document.querySelector("#cNum1");
+
 react.addEventListener("click",LoveReact);
 
+console.log(LoveNum.valueOf());
+var numb=(LoveNum.textContent);
+// console.log(numb);
+console.log(numb.valueOf());
+
 function LoveReact(){
-  // react.classList.toggle("love");
-  // console.log("clicked")
-  react.style.color=="red";
+ react.classList.toggle("active");
+//  LoveNum.innerHTML=LoveNum;
+if(numb.valueOf()===numb){
+  LoveNum.innerHTML=parseInt(LoveNum.innerHTML)+1;
+  console.log(LoveNum.value);
 }
+else{
+  LoveNum.innerHTML==parseInt(LoveNum.innerHTML);
+}
+}
+
+
+
+
+// $(document).ready(function(){
+//   $(react).click(function(){
+//     $(react).toggleclass("active");
+//     console.log("clicked");
+//   });
+
+// });
+
+
+
+  
+
+
